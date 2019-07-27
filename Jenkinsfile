@@ -1,5 +1,11 @@
 pipeline {
   agent none
+
+
+  parameters{
+    file(fileLocation: 'module.tar.gz', description: 'puppet module')
+  }
+
   stages {
     stage('pkd validate') {
       agent {
